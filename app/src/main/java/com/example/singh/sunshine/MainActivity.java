@@ -17,13 +17,15 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button check=(Button)findViewById(R.id.id_butt);
-        final EditText city=(EditText)findViewById(R.id.editText);
+        final EditText city1=(EditText)findViewById(R.id.editText);
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s= String.valueOf(city.getText());
-                Toast.makeText(MainActivity.this, "LOCATION NOT AVAILABLE", Toast.LENGTH_SHORT).show();
+                String city= String.valueOf(city1.getText());
+
+                Toast.makeText(MainActivity.this, "LOADING.....", Toast.LENGTH_SHORT).show();
                 Intent i= new Intent(MainActivity.this,WeatherActivity.class);
+                i.putExtra("city",city);
                 startActivity(i);
             }
         });

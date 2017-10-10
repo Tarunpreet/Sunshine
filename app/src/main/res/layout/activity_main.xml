@@ -6,42 +6,41 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/image1"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginLeft="21dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="167dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="@android:color/white"
         android:text="@string/editext1"
         android:textColorLink="@color/colorAccent"
-        android:textSize="22sp" />
+        android:textSize="22sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/id_butt"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="93dp"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginLeft="87dp"
+        android:layout_marginStart="87dp"
         android:text="@string/check1"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        android:layout_below="@+id/editText"
+        android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/editText"
         android:layout_alignStart="@+id/editText" />
 
