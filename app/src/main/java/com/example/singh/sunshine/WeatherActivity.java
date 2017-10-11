@@ -3,9 +3,10 @@ package com.example.singh.sunshine;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+//import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -51,12 +52,12 @@ public class WeatherActivity extends AppCompatActivity {
         String API = "&appid=763ce3ee3cba8e9c970306e78f128965";
         String url =baseURL+city+API;
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                (Request.Method.GET, url, null,new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject responseObject) {
                         //tempTextView.setText("Response: " + response.toString());
-                        Log.v("WEATHER", "Response: " + responseObject.toString());
+                        //Log.v("WEATHER", "Response: " + responseObject.toString());
 
                         try
                         {
@@ -82,6 +83,7 @@ public class WeatherActivity extends AppCompatActivity {
                         }
                         catch (JSONException e)
                         {
+
                             e.printStackTrace();
                         }
                     }
@@ -89,12 +91,13 @@ public class WeatherActivity extends AppCompatActivity {
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
-
+                        Toast.makeText(WeatherActivity.this, "Sorry No Location Found.....", Toast.LENGTH_LONG).show();
+                        Intent i2=new Intent(WeatherActivity.this,MainActivity.class);
+                        startActivity(i2);
                     }
                 });
 
-        // Access the RequestQueue through your singleton class.
+        
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(jsObjRequest);
     }
